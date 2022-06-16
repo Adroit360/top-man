@@ -34,6 +34,16 @@
         }
       }
     }
+    .intro {
+      height: 50%;
+      border: 1px solid red;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("../../../assets/bakcground.png");
+      border-radius: 25px;
+      overflow: hidden;
+    }
   }
   .sidebar {
     width: 280px;
