@@ -1,26 +1,20 @@
 <main class="container">
+  <!-- Begin Side Bar -->
   <aside class="sidebar">
     <div class="logo">
       <img src="../../../assets/logo.png" alt="logo" />
     </div>
     <div class="sidebar__menu">
       <p class="menu__title">Categories</p>
-      <ul>
-        <li>
-          <a href="../../../assets/pdf/CV_Jérémie_Bouvier.pdf" target="_blank">
-            <i class="fas fa-file-pdf"></i>
-            CV
-          </a>
-        </li>
-        <li>
-          <a href="../../../assets/pdf/CV_Jérémie_Bouvier.pdf" target="_blank">
-            <i class="fas fa-file-pdf"></i>
-            CV
-          </a>
+      <ul class="menu__links">
+        <li class="menu__link__item" *ngFor="let item of categories">
+          <p>{{ item }}</p>
         </li>
       </ul>
     </div>
   </aside>
+  <!--End Side Bar -->
+  <!-- Begin main content -->
   <section class="content">
     <div class="search">
       <img src="../../../assets/search.svg" alt="search icon" />
@@ -50,8 +44,9 @@
           <p class="book__author">Mr. Aki Lalddooa</p>
           <p class="book__price">Ghc50</p>
         </div>
-        <button class="book__btn">order book</button>
+        <button class="book__btn">buy now</button>
       </div>
     </div>
   </section>
+  <!-- End main content -->
 </main>
