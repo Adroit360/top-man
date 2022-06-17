@@ -1,5 +1,8 @@
 .checkout-container {
   padding: 2rem;
+  @media screen and (max-width: 500px) {
+    padding: 2rem 1rem;
+  }
 }
 
 .heading {
@@ -12,15 +15,23 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+
   & > * {
     flex: 1;
     flex-basis: 100%;
+  }
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: stretch;
   }
   .checkout__details {
     background: #ffffff;
     box-shadow: 0px 1px 31px -6px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 2rem;
+    @media screen and (max-width: 500px) {
+      padding: 1rem;
+    }
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -60,6 +71,9 @@
       label {
         font-weight: bold;
         font-size: 1.2rem;
+        @media screen and (max-width: 500px) {
+          font-size: 1rem;
+        }
       }
       .invalid-feedback {
         color: red;
