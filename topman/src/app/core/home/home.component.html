@@ -19,5 +19,26 @@
         <button>Browse Books</button>
       </div>
     </div>
+    <div class="books">
+      <div
+        class="book__card"
+        *ngFor="
+          let item of [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+            20
+          ]
+        "
+      >
+        <div class="book__img">
+          <img src="../../../assets/book.png" alt="book" />
+        </div>
+        <div class="book__info">
+          <h2 class="book__title">A+ Series Chemistry</h2>
+          <p class="book__author">Mr. Aki Lalddooa</p>
+          <p class="book__price">Ghc50</p>
+        </div>
+        <button>order book</button>
+      </div>
+    </div>
   </section>
 </main>
