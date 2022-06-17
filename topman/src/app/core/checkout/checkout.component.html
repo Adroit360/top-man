@@ -1,109 +1,118 @@
-<section class="checkout-container">
-  <h1 class="heading">Checkout</h1>
-  <form class="form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <!--Begin Form container-->
-    <div class="form__container">
-      <div class="form__control"></div>
-      <div class="form__control">
-        <label for="name">Name</label>
-        <input
-          type="text"
-          placeholder="Enter your name"
-          name="name"
-          id="name"
-          formControlName="name"
-          [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
-        />
-        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
-          <div *ngIf="f['name'].errors['required']">Name is required</div>
-        </div>
-      </div>
-      <div class="form__control">
-        <label for="phoneNumber">Phone Number(number to be delivered to)</label>
-        <input
-          type="text"
-          placeholder="Enter Your Phone number"
-          name="phoneNumber"
-          id="phoneNumber"
-          formControlName="phoneNumber"
-          [ngClass]="{ 'is-invalid': submitted && f['phoneNumber'].errors }"
-        />
-        <div
-          *ngIf="submitted && f['phoneNumber'].errors"
-          class="invalid-feedback"
-        >
-          <div *ngIf="f['phoneNumber'].errors['required']">
-            phone number is required
-          </div>
-          <div *ngIf="f['phoneNumber'].errors['pattern']">
-            enter a valid phone number
+<section>
+  <app-navbar></app-navbar>
+  <section class="checkout-container">
+    <h1 class="heading">Checkout</h1>
+    <form class="form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <!--Begin Form container-->
+      <div class="form__container">
+        <div class="form__control"></div>
+        <div class="form__control">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            name="name"
+            id="name"
+            formControlName="name"
+            [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+          />
+          <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+            <div *ngIf="f['name'].errors['required']">Name is required</div>
           </div>
         </div>
-      </div>
-      <div class="form__control">
-        <label for="location">Location</label>
-        <input
-          list="location_lists"
-          placeholder="Enter or choose the closest location"
-          name="location"
-          id="location"
-          formControlName="location"
-          [ngClass]="{
-            'is-invalid': (submitted && f['location'].errors) || invalidLocation
-          }"
-          (change)="onCalculateDeliveryFee($event)"
-        />
-        <datalist id="location_lists">
-          <option
-            *ngFor="let city of locations"
-            value="{{ city.name }}"
-          ></option>
-        </datalist>
-        <div *ngIf="submitted && f['location'].errors" class="invalid-feedback">
-          <div *ngIf="f['location'].errors['required']">
-            location is required
+        <div class="form__control">
+          <label for="phoneNumber"
+            >Phone Number(number to be delivered to)</label
+          >
+          <input
+            type="text"
+            placeholder="Enter Your Phone number"
+            name="phoneNumber"
+            id="phoneNumber"
+            formControlName="phoneNumber"
+            [ngClass]="{ 'is-invalid': submitted && f['phoneNumber'].errors }"
+          />
+          <div
+            *ngIf="submitted && f['phoneNumber'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['phoneNumber'].errors['required']">
+              phone number is required
+            </div>
+            <div *ngIf="f['phoneNumber'].errors['pattern']">
+              enter a valid phone number
+            </div>
           </div>
         </div>
-        <div
-          *ngIf="!(submitted && f['location'].errors) && invalidLocation"
-          class="invalid-feedback"
-        >
-          <div>Select a valid location</div>
+        <div class="form__control">
+          <label for="location">Location</label>
+          <input
+            list="location_lists"
+            placeholder="Enter or choose the closest location"
+            name="location"
+            id="location"
+            formControlName="location"
+            [ngClass]="{
+              'is-invalid':
+                (submitted && f['location'].errors) || invalidLocation
+            }"
+            (change)="onCalculateDeliveryFee($event)"
+          />
+          <datalist id="location_lists">
+            <option
+              *ngFor="let city of locations"
+              value="{{ city.name }}"
+            ></option>
+          </datalist>
+          <div
+            *ngIf="submitted && f['location'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['location'].errors['required']">
+              location is required
+            </div>
+          </div>
+          <div
+            *ngIf="!(submitted && f['location'].errors) && invalidLocation"
+            class="invalid-feedback"
+          >
+            <div>Select a valid location</div>
+          </div>
         </div>
       </div>
-    </div>
-    <!--End Form container-->
-    <!--Begin checkout section-->
-    <div class="checkout__details">
-      <div class="checkout__items-group">
-        <app-checkout-item></app-checkout-item>
-        <app-checkout-item></app-checkout-item>
-        <app-checkout-item></app-checkout-item>
-        <app-checkout-item></app-checkout-item>
-      </div>
-      <div class="total-price">
-        <div class="price">
-          <p>Sub Total</p>
-          <p>Ghc50</p>
+      <!--End Form container-->
+      <!--Begin checkout section-->
+      <div class="checkout__details">
+        <div class="checkout__items-group">
+          <app-checkout-item></app-checkout-item>
+          <app-checkout-item></app-checkout-item>
+          <app-checkout-item></app-checkout-item>
+          <app-checkout-item></app-checkout-item>
         </div>
-        <div class="price">
-          <p>Delivery Fee</p>
-          <p>Ghc50</p>
+        <div class="total-price">
+          <div class="price">
+            <p>Sub Total</p>
+            <p>Ghc50</p>
+          </div>
+          <div class="price">
+            <p>Delivery Fee</p>
+            <p>Ghc50</p>
+          </div>
+          <div class="price">
+            <p>Total</p>
+            <p>Ghc50</p>
+          </div>
         </div>
-        <div class="price">
-          <p>Total</p>
-          <p>Ghc50</p>
-        </div>
-      </div>
-      <button type="button" class="add-btn" onclick="onAddMoreBooks()">
-        Add more books
-      </button>
-      <button type="submit" class="submit-btn">
-        <!-- <div class="loader-2" *ngIf="loading"></div>
+        <button type="button" class="add-btn" onclick="onAddMoreBooks()">
+          Add more books
+        </button>
+        <button type="submit" class="submit-btn">
+          <!-- <div class="loader-2" *ngIf="loading"></div>
           <p *ngIf="!loading">Place Order</p> -->
-        Confirm Order
-      </button>
-    </div>
-    <!--Begin checkout section-->
-  </form>
+          Confirm Order
+        </button>
+      </div>
+      <!--Begin checkout section-->
+    </form>
+  </section>
 </section>
