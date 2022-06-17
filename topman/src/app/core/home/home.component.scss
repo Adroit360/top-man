@@ -89,17 +89,37 @@
   }
   .sidebar {
     width: 280px;
-    border: 1px solid green;
+    //border: 1px solid green;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 280px;
+    .logo {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+      padding: 0 2rem;
+      height: 9.8rem;
+      border-right: 1px solid #d9d9d9;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .sidebar__menu {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 2rem;
+    }
   }
 }
 
 .single {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
   .book__card {
     max-width: 280px;
   }
@@ -107,7 +127,7 @@
 .more {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 3rem;
 }
 .books {
   .book__card {
