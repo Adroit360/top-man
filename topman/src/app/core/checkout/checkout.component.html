@@ -76,24 +76,10 @@
     <!--Begin checkout section-->
     <div class="checkout__details">
       <div class="checkout__items-group">
-        <div class="checkout__item">
-          <div class="item__info">
-            <img src="../../../assets/book.png" alt="book" />
-            <div class="book__info">
-              <h3 class="book__title">Aki-Ola Series</h3>
-              <p class="book__author">Mr. Aki Lalddooa</p>
-              <p class="book__price">Ghc50</p>
-            </div>
-          </div>
-          <div class="item__controls">
-            <img src="../../../assets/deletIcon.svg" alt="delete icon" />
-            <div class="item__quantity">
-              <button type="button" class="decrease">-</button>
-              <p class="quantity">2</p>
-              <button type="button" class="increase">+</button>
-            </div>
-          </div>
-        </div>
+        <app-checkout-item></app-checkout-item>
+        <app-checkout-item></app-checkout-item>
+        <app-checkout-item></app-checkout-item>
+        <app-checkout-item></app-checkout-item>
       </div>
       <button type="submit" class="submit-btn">
         <!-- <div class="loader-2" *ngIf="loading"></div>
