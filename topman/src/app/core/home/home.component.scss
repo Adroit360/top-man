@@ -4,7 +4,6 @@
   height: 100%;
   .content {
     flex-grow: 1;
-    border: 1px solid red;
     padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
@@ -47,10 +46,12 @@
       border-radius: 25px;
       overflow: hidden;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 0.5rem;
+      //align-items: center;
+      justify-content: center;
       padding: 0 3rem;
-      .intro__left {
+      .intro__heading {
         font-weight: bold;
         img {
           width: 6rem;
@@ -68,11 +69,11 @@
           color: #fd6f00;
         }
       }
-      .intro__right {
+      .intro__message {
         font-weight: bold;
         color: #ffffff;
         p {
-          font-size: 1.8rem;
+          font-size: 1rem;
           margin: 0;
         }
         button {
