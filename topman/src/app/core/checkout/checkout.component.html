@@ -1,7 +1,7 @@
-<section>
-  <h1>Checkout</h1>
+<section class="checkout-container">
+  <h1 class="heading">Checkout</h1>
   <form class="form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <h1 class="form__title">Place order</h1>
+    <!--Begin Form container-->
     <div class="form__container">
       <div class="form__control"></div>
       <div class="form__control">
@@ -71,28 +71,31 @@
           <div>Select a valid location</div>
         </div>
       </div>
-
-      <!-- <div class="price-info">
-          <div class="info-item">
-            <p>Delivery Fee :</p>
-            {{ deliveryFee.toFixed(2) }}
+    </div>
+    <!--End Form container-->
+    <!--Begin checkout section-->
+    <div class="checkout__details">
+      <div class="checkout__items-group">
+        <div class="checkout__item">
+          <div class="item__info">
+            <img src="../../../assets/book.png" alt="book" />
+            <div class="book__info">
+              <h3 class="book__title">Aki-Ola Series</h3>
+              <p class="book__author">Mr. Aki Lalddooa</p>
+              <p class="book__price">Ghc50</p>
+            </div>
           </div>
-          <div class="info-item">
-            <p>Price of Food :</p>
-            {{ priceOfFood }}
-          </div>
-
-          <hr />
-          <div class="info-item">
-            <p>Total Price :</p>
-            {{ totalPrice.toFixed(2) }}
+          <div class="item__controls">
+            <img src="../../../assets/deletIcon.svg" alt="delete icon" />
           </div>
         </div>
-
-        <button type="submit" class="submit-btn">
-          <div class="loader-2" *ngIf="loading"></div>
-          <p *ngIf="!loading">Place Order</p>
-        </button> -->
+      </div>
+      <button type="submit" class="submit-btn">
+        <!-- <div class="loader-2" *ngIf="loading"></div>
+          <p *ngIf="!loading">Place Order</p> -->
+        Confirm Order
+      </button>
     </div>
+    <!--Begin checkout section-->
   </form>
 </section>
