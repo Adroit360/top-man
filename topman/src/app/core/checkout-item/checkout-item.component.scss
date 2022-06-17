@@ -9,16 +9,25 @@
     align-items: center;
     gap: 0.5rem;
     img {
-      width: 5rem;
+      width: 3rem;
       border-radius: 10px;
     }
     .book__author {
       font-size: 0.8rem;
       color: #ff5c01;
     }
-    .book__title,
+    .book__title {
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
     .book__price {
-      font-size: 1rem;
+      font-size: 0.8rem;
+      color: #67707d;
+      font-weight: 200;
+    }
+    .total-amount {
+      color: #ff5c01;
       font-weight: 700;
     }
   }
@@ -28,8 +37,9 @@
     flex-direction: column;
     justify-content: space-between;
     img {
-      width: 1.5rem;
+      width: 1.2rem;
       align-self: center;
+      cursor: pointer;
     }
     .item__quantity {
       display: flex;
