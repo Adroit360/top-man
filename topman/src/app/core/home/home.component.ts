@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,12 @@ export class HomeComponent implements OnInit {
     'Aki ola',
     'the books company',
   ];
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  //TODO: add the id and logic to the checkout page and add the item to the checkout
+  onBuyBook() {
+    this.router.navigate(['/checkout']);
+  }
 }

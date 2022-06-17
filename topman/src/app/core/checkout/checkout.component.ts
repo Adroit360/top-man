@@ -23,7 +23,9 @@ export class CheckoutComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.scroll(0, 0);
+  }
 
   // convenience getter for easy access to form fields
   get f() {
