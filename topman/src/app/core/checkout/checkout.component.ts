@@ -59,4 +59,6 @@ export class CheckoutComponent implements OnInit {
       //this.totalPrice = this.getTotalPrice(this.deliveryFee, this.priceOfFood);
     }
   }
+
+  onAddMoreBooks() {}
 }
