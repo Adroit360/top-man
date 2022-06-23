@@ -1,0 +1,200 @@
+.container {
+  display: flex;
+  width: 100%;
+  .content {
+    flex-grow: 1;
+    padding: 2rem 3rem;
+    .search {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-left: 5rem;
+      height: 4rem;
+      background: #ffffff;
+      box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.25),
+        0px 4px 35px 13px rgba(86, 81, 81, 0.07);
+      border-radius: 50px;
+      img {
+        width: 1.5rem;
+      }
+      .search__input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 1.2rem;
+        font-weight: 200;
+        color: #f08018;
+        &::placeholder {
+          color: #f08018;
+        }
+      }
+    }
+    .intro {
+      margin: 3rem 0;
+      height: 22.7rem;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("../../../assets/bakcground.png");
+      border-radius: 25px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      justify-content: center;
+      padding: 0 3rem;
+      .intro__heading {
+        font-weight: bold;
+        img {
+          width: 6rem;
+        }
+        p {
+          font-size: 1.5rem;
+          color: #ffffff;
+        }
+        h1 {
+          margin: 0;
+          font-size: 2.5rem;
+          color: #ffffff;
+        }
+        .book-text {
+          color: #fd6f00;
+        }
+      }
+      .intro__message {
+        font-weight: bold;
+        color: #ffffff;
+        p {
+          font-size: 1rem;
+          margin: 0;
+        }
+        button {
+          margin-top: 1rem;
+          border: none;
+          background-color: #fd6f00;
+          width: fit-content;
+          padding: 1rem 3rem;
+          border-radius: 33px;
+          color: #ffffff;
+          font-weight: bold;
+          font-size: 1rem;
+          text-transform: capitalize;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .sidebar {
+    width: 280px;
+    //border: 1px solid green;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 280px;
+    .logo {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+      padding: 0 2rem;
+      height: 9.8rem;
+      border-right: 1px solid #d9d9d9;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .sidebar__menu {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 2rem 10rem 2rem;
+      border-right: 1px solid #d9d9d9;
+      .menu__title {
+        font-weight: 700;
+        font-size: 2rem;
+        color: #ff5c01;
+      }
+      .menu__links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .menu__link__item {
+          font-size: 1.2rem;
+          color: rgba(0, 0, 0, 0.53);
+          font-weight: 400;
+          text-transform: capitalize;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.single {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  .book__card {
+    max-width: 280px;
+  }
+}
+.more {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+.books {
+  .book__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .book__img {
+      width: 100%;
+      height: 384px;
+      border-radius: 25px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .book__info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      .book__title {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .book__author {
+        font-size: 1rem;
+        color: #ff5c01;
+      }
+      .book__price {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+    .book__btn {
+      border: none;
+      background-color: #fd6f00;
+      width: 100%;
+      padding: 0.8rem 3rem;
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+  }
+}
+
+.sidebar {
+  height: 100%;
+}

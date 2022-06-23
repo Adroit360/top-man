@@ -1,0 +1,56 @@
+<div>
+  <app-navbar></app-navbar>
+  <main class="container">
+    <!-- Begin Side Bar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="../../../assets/logo.png" alt="logo" />
+      </div>
+      <div class="sidebar__menu">
+        <p class="menu__title">Categories</p>
+        <ul class="menu__links">
+          <li class="menu__link__item" *ngFor="let item of categories">
+            <p>{{ item }}</p>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <!--End Side Bar -->
+    <!-- Begin main content -->
+    <section class="content">
+      <div class="search">
+        <img src="../../../assets/search.svg" alt="search icon" />
+        <input
+          type="text"
+          placeholder="Search by author or title"
+          class="search__input"
+        />
+      </div>
+      <div class="intro">
+        <div class="intro__heading">
+          <img src="../../../assets/bookLogo.svg" alt="logo" />
+          <h1>Welcome to Topman <span class="book-text">Books</span></h1>
+        </div>
+        <div class="intro__message">
+          <p>A book is a gift one can open again and again</p>
+          <button>Browse Books</button>
+        </div>
+      </div>
+      <div class="books" [ngClass]="dummyData.length > 3 ? 'more' : 'single'">
+        <div class="book__card" *ngFor="let item of dummyData">
+          <div class="book__img">
+            <img src="../../../assets/book.png" alt="book" />
+          </div>
+          <div class="book__info">
+            <h2 class="book__title">A+ Series Chemistry</h2>
+            <p class="book__author">Mr. Aki Lalddooa</p>
+            <p class="book__price">Ghc50</p>
+          </div>
+          <button class="book__btn" (click)="onBuyBook()">buy now</button>
+        </div>
+      </div>
+    </section>
+    <!-- End main content -->
+  </main>
+  <app-scroll-to-top></app-scroll-to-top>
+</div>
